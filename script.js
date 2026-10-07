@@ -5,33 +5,35 @@ const audio = document.getElementById("audio");
 const botonMusica = document.getElementById("botonMusica");
 let musicaIniciada = false;
 
-function iniciarMusica() {
-  if (musicaIniciada) return;
-  musicaIniciada = true;
-  audio.volume = 0.8;
-  const intento = audio.play();
-  if (intento !== undefined) {
-    intento.catch(() => { musicaIniciada = false; });
+if (audio && botonMusica) {
+  function iniciarMusica() {
+    if (musicaIniciada) return;
+    musicaIniciada = true;
+    audio.volume = 0.8;
+    const intento = audio.play();
+    if (intento !== undefined) {
+      intento.catch(() => { musicaIniciada = false; });
+    }
   }
-}
 
-window.addEventListener("load", () => {
-  iniciarMusica();
-  botonMusica.classList.add("sonando");
-});
-["pointerdown", "touchstart", "keydown"].forEach((ev) => {
-  document.addEventListener(ev, iniciarMusica, { once: true });
-});
-
-botonMusica.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play().catch(() => {});
+  window.addEventListener("load", () => {
+    iniciarMusica();
     botonMusica.classList.add("sonando");
-  } else {
-    audio.pause();
-    botonMusica.classList.remove("sonando");
-  }
-});
+  });
+  ["pointerdown", "touchstart", "keydown"].forEach((ev) => {
+    document.addEventListener(ev, iniciarMusica, { once: true });
+  });
+
+  botonMusica.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch(() => {});
+      botonMusica.classList.add("sonando");
+    } else {
+      audio.pause();
+      botonMusica.classList.remove("sonando");
+    }
+  });
+}
 
 // ===== INTRO: corazón líquido que se llena =====
 const intro = document.getElementById("intro");
@@ -89,7 +91,7 @@ function corazonesMini(cantidad) {
 
 async function llenarIntro() {
   if (animando) return;
-  iniciarMusica();
+  if (typeof iniciarMusica === "function") iniciarMusica();
   animando = true;
   const desde = progreso;
   progreso = Math.min(100, progreso + PASO);
