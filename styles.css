@@ -162,9 +162,7 @@ body {
   font-size: 2rem; font-style: italic; font-weight: normal;
   color: var(--rojo); margin-bottom: 2rem;
 }
-.seccion h2::after {
-  content: " &#10084;"; color: var(--dorado);
-}
+.seccion h2::after { content: ""; }
 .nota { font-style: italic; color: #8a6f6f; margin-bottom: 1.5rem; }
 .nota code {
   background: var(--rosa-claro); padding: .1rem .4rem;
