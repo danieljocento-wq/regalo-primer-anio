@@ -1,5 +1,27 @@
 const INICIO = new Date("2025-10-07T15:30:00");
 
+// ===== MÚSICA =====
+const audio = document.getElementById("audio");
+const botonMusica = document.getElementById("botonMusica");
+let musicaIniciada = false;
+
+function iniciarMusica() {
+  if (musicaIniciada) return;
+  musicaIniciada = true;
+  audio.volume = 0.8;
+  audio.play().catch(() => { musicaIniciada = false; });
+}
+
+botonMusica.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play().catch(() => {});
+    botonMusica.classList.add("sonando");
+  } else {
+    audio.pause();
+    botonMusica.classList.remove("sonando");
+  }
+});
+
 // ===== INTRO: corazón líquido que se llena =====
 const intro = document.getElementById("intro");
 const introMsg = document.getElementById("introMsg");
@@ -56,6 +78,7 @@ function corazonesMini(cantidad) {
 
 async function llenarIntro() {
   if (animando) return;
+  iniciarMusica();
   animando = true;
   const desde = progreso;
   progreso = Math.min(100, progreso + PASO);

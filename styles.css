@@ -72,6 +72,20 @@ body {
   to { transform: translate(var(--dx), var(--dy)) scale(1.5); opacity: 0; }
 }
 
+/* Botón de música */
+.musica-btn {
+  position: fixed; bottom: 1.2rem; right: 1.2rem;
+  z-index: 2000;
+  width: 52px; height: 52px; border: none; border-radius: 50%;
+  background: linear-gradient(135deg, var(--rojo), #96281b);
+  color: #fff; font-size: 1.4rem; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(192,57,43,.4);
+  transition: transform .25s;
+}
+.musica-btn:hover { transform: scale(1.1); }
+.musica-btn.sonando { animation: girar 3s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
 /* Pétalos */
 .petalos { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
 .petalo {
