@@ -9,8 +9,19 @@ function iniciarMusica() {
   if (musicaIniciada) return;
   musicaIniciada = true;
   audio.volume = 0.8;
-  audio.play().catch(() => { musicaIniciada = false; });
+  const intento = audio.play();
+  if (intento !== undefined) {
+    intento.catch(() => { musicaIniciada = false; });
+  }
 }
+
+window.addEventListener("load", () => {
+  iniciarMusica();
+  botonMusica.classList.add("sonando");
+});
+["pointerdown", "touchstart", "keydown"].forEach((ev) => {
+  document.addEventListener(ev, iniciarMusica, { once: true });
+});
 
 botonMusica.addEventListener("click", () => {
   if (audio.paused) {
