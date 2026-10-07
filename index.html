@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estefany & Leonardo — Nuestro Primer Año</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- INTRO: CORAZÓN QUE SE LLENA -->
+  <div class="intro" id="intro" role="button" tabindex="0" aria-label="Toca el corazón para abrir el regalo">
+    <p class="intro-msg" id="introMsg">Toca el corazón para que se llene de amor</p>
+    <div class="cont-corazon" id="contCorazon">
+      <svg class="corazon-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="gradLiquido" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#8a1a0a"/>
+            <stop offset=".4" stop-color="#c0392b"/>
+            <stop offset="1" stop-color="#e0564a"/>
+          </linearGradient>
+          <mask id="mascaraCorazon">
+            <path d="M50,30 C50,16 40,6 28,6 C12,6 0,18 0,34 C0,52 10,68 50,92 C90,68 100,52 100,34 C100,18 88,6 72,6 C60,6 50,16 50,30 Z" fill="#fff"/>
+          </mask>
+        </defs>
+        <path id="silueta" d="M50,30 C50,16 40,6 28,6 C12,6 0,18 0,34 C0,52 10,68 50,92 C90,68 100,52 100,34 C100,18 88,6 72,6 C60,6 50,16 50,30 Z" fill="#f9e3e3" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round"/>
+        <path id="formaLiquido" d="M50,30 C50,16 40,6 28,6 C12,6 0,18 0,34 C0,52 10,68 50,92 C90,68 100,52 100,34 C100,18 88,6 72,6 C60,6 50,16 50,30 Z" fill="url(#gradLiquido)"/>
+        <g id="grupoCubierta" mask="url(#mascaraCorazon)">
+          <path id="cubierta" d="M0 0 L100 0 L100 100 L0 100 Z" fill="#f9e3e3"/>
+        </g>
+        <g id="burbujas">
+          <circle class="burbuja" cx="36" cy="88" r="1.8"/>
+          <circle class="burbuja" cx="55" cy="82" r="1.3" style="animation-delay:.9s"/>
+          <circle class="burbuja" cx="68" cy="86" r="1.6" style="animation-delay:1.7s"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="petalos" id="petalos"></div>
+
+  <!-- PORTADA -->
+  <header class="portada">
+    <p class="frase-arriba">Nuestro primer año juntos</p>
+    <h1><span class="corazon">&#10084;</span> Mi Niña Hermosa <span class="corazon">&#10084;</span></h1>
+    <p class="bajada">Para ti mi amorrr con todo mi corazon</p>
+    <a href="#contador" class="flecha">&#8595;</a>
+  </header>
+
+  <!-- CONTADOR -->
+  <section class="seccion" id="contador">
+    <h2>El tiempo que llevamos juntos</h2>
+    <div class="contador">
+      <div class="celda"><span id="dias">0</span><small>días</small></div>
+      <div class="celda"><span id="horas">0</span><small>horas</small></div>
+      <div class="celda"><span id="minutos">0</span><small>minutos</small></div>
+      <div class="celda"><span id="segundos">0</span><small>segundos</small></div>
+    </div>
+  </section>
+
+  <!-- NUESTRA HISTORIA -->
+  <section class="seccion cita">
+    <h2>Cómo empezó todo</h2>
+    <div class="tarjeta">
+      <p class="destacado">15 de agosto</p>
+      <p>Un viernes a las 2:30 de la tarde, el Café de Hierro se convirtió en el
+      escenario de nuestro comienzo. Con los nervios a flor de piel y un girasol
+      entre las manos, te vi llegar y el tiempo se detuvo. Esa primera conversación
+      fue el inicio de todo; sin saberlo, ahí empezaba la mejor historia que jamás
+      me habrá tocado vivir.</p>
+    </div>
+    <div class="tarjeta">
+      <p class="destacado">7 de octubre</p>
+      <p>Aquel 7 de octubre de 2025 dejó de ser una fecha cualquiera. La tarde en
+      La Michoacana se sintió diferente; no solo por el helado que compartimos,
+      sino porque en ese momento, me entregaste más que un muñequito tejido de
+      Checo Pérez: me entregaste un pedacito de tu tiempo y tu cariño en ese
+      regalo tan lindo.</p>
+      <p>Recuerdo que el reloj marcaba entre las 4:00 y las 4:30 de la tarde
+      cuando, con el corazón en la mano, te hice la pregunta que definiría mi
+      destino. Ese &ldquo;no&rdquo; inicial me robó el aliento por un segundo, solo para que
+      tu &ldquo;sí&rdquo; definitivo, ese &ldquo;sí&rdquo; que salió de tu alma, se convirtiera en el
+      sonido más dulce que jamás había escuchado.</p>
+      <p>Ahí, en medio de la risa y la ternura de tu juego, empezó todo, mi niña.
+      Nuestra historia, la historia que más valoro.</p>
+    </div>
+  </section>
+
+  <!-- MENSAJES DE AMOR -->
+  <section class="seccion">
+    <h2>Por qué te quiero</h2>
+    <div class="razones">
+      <div class="razon"><span>&#10084;</span><p>Porque tu sonrisa es mi lugar favorito en el mundo.</p></div>
+      <div class="razon"><span>&#10084;</span><p>Porque a tu lado los días comunes se vuelven inolvidables.</p></div>
+      <div class="razon"><span>&#10084;</span><p>Porque escuchas mis locuras y aun así te quedas.</p></div>
+      <div class="razon"><span>&#10084;</span><p>Porque contigo aprendí que amar es sencillo y bonito.</p></div>
+      <div class="razon"><span>&#10084;</span><p>Porque cada plan mío siempre te incluye a ti.</p></div>
+      <div class="razon"><span>&#10084;</span><p>Porque eres mi pareja, mi calma y mi alegría.</p></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="seccion">
+    <h2>Nuestros recuerdos</h2>
+    <p class="nota">Coloca tus fotos en la carpeta <code>fotos/</code> con estos nombres:</p>
+    <div class="galeria">
+      <figure><img src="fotos/foto1.jpg" alt="Recuerdo 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto1.jpg</div></figure>
+      <figure><img src="fotos/foto2.jpg" alt="Recuerdo 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto2.jpg</div></figure>
+      <figure><img src="fotos/foto3.jpg" alt="Recuerdo 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto3.jpg</div></figure>
+      <figure><img src="fotos/foto4.jpg" alt="Recuerdo 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto4.jpg</div></figure>
+      <figure><img src="fotos/foto5.jpg" alt="Recuerdo 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto5.jpg</div></figure>
+      <figure><img src="fotos/foto6.jpg" alt="Recuerdo 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="vacio">foto6.jpg</div></figure>
+    </div>
+  </section>
+
+  <!-- SOBRE SORPRESA -->
+  <section class="seccion sobre-seccion">
+    <h2>Una carta para ti</h2>
+    <p class="nota">Toca el sobre para abrirlo</p>
+    <div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Abrir carta">
+      <div class="tapa"></div>
+      <div class="cuerpo-sobre">
+        <span class="lacre">&#10084;</span>
+      </div>
+    </div>
+    <div class="carta" id="carta">
+      <p class="saludo">Mi princesa hermosa,</p>
+      <p>Hoy cumplimos un año y todavía me parece increíble que alguien como tú
+      haya elegido caminar conmigo. Desde aquel primer café en el Café de Hierro,
+      mi vida cambió: encontré en ti a mi mejor amiga, mi confidente y el amor
+      de mi vida.</p>
+      <p>Gracias por cada risa, cada abrazo y cada momento. Si pudiera volver
+      al 7 de octubre de 2025, lo haría mil veces, siempre contigo.</p>
+      <p>Este es solo el primer año de muchos. Te prometo cuidarte, apoyarte y
+      amarte cada día más.</p>
+      <p class="firma">Con todo mi corazón,<br><em>tu niño hermoso</em></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
